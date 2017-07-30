@@ -1,5 +1,6 @@
 ### Python
 /ENV
+*.pyc
 
 ### Node ###
 
