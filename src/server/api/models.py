@@ -9,6 +9,6 @@ class Article(models.Model):
     content = models.TextField()
     author = models.CharField(max_length=200)
     category = models.CharField(max_length=50)
-    url = models.CharField(max_length=2048)
-    image_url = models.TextField(null=True)
+    url = models.CharField(max_length=250)
+    image_url = models.CharField(max_length=250)
     published_at = models.DateTimeField()
