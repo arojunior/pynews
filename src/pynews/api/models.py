@@ -11,4 +11,4 @@ class Article(models.Model):
     category = models.CharField(max_length=50)
     url = models.CharField(max_length=2048)
     image_url = models.TextField(null=True)
-    published_date = models.DateTimeField()
+    published_at = models.DateTimeField()
