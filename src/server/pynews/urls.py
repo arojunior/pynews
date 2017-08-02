@@ -21,6 +21,7 @@ from api import views
 # API Routes
 router = routers.DefaultRouter()
 router.register(r'articles', views.ArticleViewSet)
+router.register(r'sources', views.SourceViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),

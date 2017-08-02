@@ -127,3 +127,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# News API variables
+NEWS_API_URL = "https://newsapi.org/v1/"
+NEWS_API_KEY = "eef4feb0ab82412aa3be394b50389a51"
+NEWS_API_CATEGORIES = ["business", "politics", "science-and-nature", "sport", "technology"]
