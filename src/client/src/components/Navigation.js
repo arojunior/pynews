@@ -1,18 +1,61 @@
 import React from 'react'
-import { Link } from 'react-router'
+import {Navbar, Nav, NavItem, Col} from 'react-bootstrap'
+import {compose, withProps} from 'recompose'
+import withSizes from 'react-sizes'
 
-const styles = {
-  link: {
-    display: 'inline-block',
-    margin: '0.5em'
-  }
-}
+const NavItems = ({pullRight}) =>
+  <Nav pullRight={pullRight}>
+    <NavItem eventKey={1} href="#">
+      POLITICS
+    </NavItem>
+    <NavItem eventKey={2} href="#">
+      BUSINESS
+    </NavItem>
+    <NavItem eventKey={3} href="#">
+      TECH
+    </NavItem>
+    <NavItem eventKey={4} href="#">
+      SCIENCE
+    </NavItem>
+    <NavItem eventKey={5} href="#">
+      SPORTS
+    </NavItem>
+    <NavItem eventKey={6} className="text-primary">
+      LOGIN
+    </NavItem>
+  </Nav>
 
-const Navigation = () => (
-  <nav>
-      <Link to='/' style={ styles.link }>Home</Link>
-      <Link to='/about' style={ styles.link }>About</Link>
-  </nav>
-)
+const NavigationDesktop = NavItems =>
+  <Navbar>
+    <Navbar.Header>
+      <Navbar.Brand>
+        <a href="#">Pynews</a>
+      </Navbar.Brand>
+    </Navbar.Header>
+    {NavItems({pullRight: true})}
+  </Navbar>
 
-export default Navigation
+const NavigationMobile = NavItems =>
+  <Navbar>
+    <Navbar.Toggle />
+    <Navbar.Header>
+      <Col xs={4} xsOffset={2}>
+        <Navbar.Brand>
+          <a href="#">Pynews</a>
+        </Navbar.Brand>
+      </Col>
+    </Navbar.Header>
+    <Navbar.Collapse>
+      {NavItems({pullRight: false})}
+    </Navbar.Collapse>
+  </Navbar>
+
+const Navigation = ({NavItems, isMobile}) =>
+  isMobile ? NavigationMobile(NavItems) : NavigationDesktop(NavItems)
+
+export default compose(
+  withProps({
+    NavItems
+  }),
+  withSizes(({width}) => ({isMobile: width < 480}))
+)(Navigation)
