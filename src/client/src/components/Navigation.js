@@ -2,6 +2,7 @@ import React from 'react'
 import {Navbar, Nav, NavItem, Col} from 'react-bootstrap'
 import {compose, withProps} from 'recompose'
 import withSizes from 'react-sizes'
+import '../assets/css/navigation.css'
 
 const NavItems = ({pullRight}) =>
   <Nav pullRight={pullRight}>
@@ -20,9 +21,7 @@ const NavItems = ({pullRight}) =>
     <NavItem eventKey={5} href="#">
       SPORTS
     </NavItem>
-    <NavItem eventKey={6} className="text-primary">
-      LOGIN
-    </NavItem>
+    <NavItem eventKey={6}>LOGIN</NavItem>
   </Nav>
 
 const NavigationDesktop = NavItems =>

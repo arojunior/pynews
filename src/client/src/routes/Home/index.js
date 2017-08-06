@@ -1,7 +1,7 @@
 import React from 'react'
 import {Row, Col, Image} from 'react-bootstrap'
 
-import '../../assets/newscard.css'
+import '../../assets/css/newscard.css'
 
 const Home = () => {
   return (

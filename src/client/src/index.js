@@ -6,6 +6,7 @@ import {Router, browserHistory} from 'react-router'
 import store from './modules'
 import routes from './routes'
 import registerServiceWorker from './registerServiceWorker'
+import './assets/css/default.css'
 
 render(
   <Provider store={store}>
