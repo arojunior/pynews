@@ -7,7 +7,7 @@ from api.serializers import ArticleSerializer, SourceSerializer
 
 # Create your views here.
 class ArticleViewSet(viewsets.ModelViewSet):
-    queryset = Article.objects.all().order_by('-published_at')
+    queryset = Article.objects.all().order_by('-published_at')[:6]
     serializer_class = ArticleSerializer
 
 class SourceViewSet(viewsets.ModelViewSet):
