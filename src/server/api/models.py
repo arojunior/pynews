@@ -9,6 +9,10 @@ class Source(models.Model):
     category = models.CharField(max_length=50)
     slug = models.CharField(max_length=50)
 
+    def __str__(self):
+        return self.name
+
+
 class Article(models.Model):
     source = models.ForeignKey(Source, on_delete=models.CASCADE)
     title = models.CharField(max_length=500)
@@ -17,3 +21,6 @@ class Article(models.Model):
     url = models.CharField(max_length=250)
     image_url = models.CharField(max_length=250)
     published_at = models.DateTimeField(null=True)
+
+    def __str__(self):
+        return self.title
