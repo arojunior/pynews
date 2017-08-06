@@ -1,11 +1,12 @@
 import {combineReducers} from 'redux'
-import {reducer as formReducer} from 'redux-form'
 
 import {createStore, applyMiddleware, compose} from 'redux'
 import fetchMiddleware from 'fetch-middleware'
 
+import News from './News'
+
 const combineReducer = combineReducers({
-  form: formReducer
+  News
 })
 
 export default createStore(

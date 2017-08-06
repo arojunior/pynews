@@ -1,9 +1,22 @@
 .card-category {
   font-size: 10px;
+  text-transform: uppercase;
 }
 
-.card-category--tech {
+.card-category--technology {
   color: #4990e2;
+}
+
+.card-category--sport {
+  color: #f6a623;
+}
+
+.card-category--science-and-nature {
+  color: #7cbc37;
+}
+
+.card-category--politics {
+  color: #ff001f;
 }
 
 .card-title {
