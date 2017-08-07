@@ -10,6 +10,13 @@ class ArticleViewSet(viewsets.ModelViewSet):
     queryset = Article.objects.all().order_by('-published_at')[:6]
     serializer_class = ArticleSerializer
 
+    def get_queryset(self):
+        queryset = Article.objects.all().order_by('-published_at')
+        category = self.request.query_params.get('category', None)
+        if category is not None:
+            queryset = queryset.filter(source__category=category)
+        return queryset[:6]
+
 class SourceViewSet(viewsets.ModelViewSet):
     queryset = Source.objects.all()
     serializer_class = SourceSerializer

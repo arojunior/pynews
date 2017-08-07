@@ -1,11 +1,10 @@
 import React from 'react'
 import {Image} from 'react-bootstrap'
+import CardCategory from './card-category'
 
 const NewsCard = news =>
   <div>
-    <span className={`card-category--${news.category}`}>
-      {news.category}
-    </span>
+    {CardCategory(news.category)}
     <div className="card-image-container">
       <Image
         responsive

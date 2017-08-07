@@ -1,13 +1,18 @@
 import Layout from '../layouts'
-
 import Home from './Home'
-import About from './About/routes'
 
-export default {
-  path: '/',
+const HomeRoute = {
   component: Layout,
-  indexRoute: Home,
-  childRoutes: [
-    About
-  ]
+  indexRoute: Home
 }
+
+export default [
+  {
+    ...HomeRoute,
+    path: '/'
+  },
+  {
+    ...HomeRoute,
+    path: '/:category'
+  }
+]
