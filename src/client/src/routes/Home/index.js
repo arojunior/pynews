@@ -2,7 +2,6 @@ import React from 'react'
 import {Row, Col} from 'react-bootstrap'
 import {compose, lifecycle, branch, renderNothing} from 'recompose'
 import {connect} from 'react-redux'
-import {isEmpty} from 'ramda'
 
 import '../../assets/css/newscard.css'
 
@@ -19,14 +18,12 @@ const Home = ({news}) => {
   return (
     <Row>
       <Row>
-        <Col md={6}>
+        <Col md={6} sm={12} xs={12}>
           {CardFeatured(featured)}
         </Col>
         {CardImage(withImage)}
       </Row>
-      <br />
-      <br />
-      <Row>
+      <Row className="news-no-image">
         {Card(noImage)}
       </Row>
     </Row>

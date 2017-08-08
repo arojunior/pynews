@@ -4,7 +4,7 @@ import CardCategory from './card-category'
 
 const NewsCard = news_list =>
   news_list.map(news =>
-    <Col md={3} key={news.id}>
+    <Col md={3} sm={6} key={news.id}>
       {CardCategory(news.category)}
       <div className="card-image-container">
         <Image

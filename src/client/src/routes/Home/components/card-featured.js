@@ -3,7 +3,7 @@ import {Image} from 'react-bootstrap'
 import CardCategory from './card-category'
 
 const NewsCard = news =>
-  <div>
+  <div className="card-featured">
     {CardCategory(news.category)}
     <div className="card-image-container">
       <Image
