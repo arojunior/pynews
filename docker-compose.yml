@@ -5,12 +5,12 @@ services:
     command: bash -c "gunicorn pynews.wsgi:application -w 2 -b 0.0.0.0:8000"
     expose:
       - "8000"
+    volumes:
+      - ./docker/crontab:/etc/crontab
   nginx:
     image: nginx:latest
     ports:
       - "8000:8000"
-    volumes_from:
-      - django
     volumes:
       - ./docker/nginx/django.conf:/etc/nginx/conf.d/default.conf
     depends_on:
