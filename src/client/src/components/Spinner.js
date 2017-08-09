@@ -3,7 +3,7 @@ import Loader from '../assets/img/loading.gif'
 
 const Spinner = (msg = null) =>
   <div>
-    <img src={Loader} /> {msg}
+    <img src={Loader} alt="Loading..." /> {msg}
   </div>
 
 export default Spinner

@@ -2,6 +2,7 @@ import React from 'react'
 import {Row, Col} from 'react-bootstrap'
 import {compose, lifecycle, branch, renderNothing} from 'recompose'
 import {connect} from 'react-redux'
+import {equals} from 'ramda'
 
 import '../../assets/css/newscard.css'
 
@@ -38,8 +39,10 @@ const HomeComponent = compose(
     componentDidMount() {
       this.props.dispatch(getNews(this.props.params))
     },
-    componentWillReceiveProps(props) {
-      this.props.dispatch(getNews(props.params))
+    componentDidUpdate(prevProps) {
+      if (!equals(prevProps.params, this.props.params)) {
+        this.props.dispatch(getNews(this.props.params))
+      }
     }
   }),
   branch(props => !props.news, renderNothing)
