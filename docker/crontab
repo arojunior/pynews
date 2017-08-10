@@ -1,0 +1,1 @@
+0 0 * * * root /src python manage.py getarticles >/dev/null 2>&1

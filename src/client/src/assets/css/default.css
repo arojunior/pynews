@@ -1,0 +1,22 @@
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+@media only screen and (max-width: 480px) {
+  .card-content {
+    margin-bottom: 20px;
+  }
+  .card-featured {
+    margin-bottom: 20px;
+  }
+}
+@media only screen and (min-width: 480px) {
+  .news-no-image {
+    margin-top: 20px;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .navbar-toggle {
+    float: left;
+  }
+}
