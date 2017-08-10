@@ -30,6 +30,10 @@
   font-size: 29px;
 }
 
+.card-title a {
+  color: #000;
+}
+
 .card-author {
   font-family: 'Open Sans', sans-serif;
   font-style: italic;

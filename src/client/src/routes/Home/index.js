@@ -4,34 +4,33 @@ import {compose, lifecycle, branch, renderNothing} from 'recompose'
 import {connect} from 'react-redux'
 import {equals} from 'ramda'
 
-import '../../assets/css/newscard.css'
-
 import {getNews} from '../../modules/News/actions'
-import Card from './components/card'
 import CardFeatured from './components/card-featured'
 import CardImage from './components/card-image'
+import CardNoImage from './components/card-no-image'
 
-const Home = ({news}) => {
-  const featured = news.slice(0, 1)[0]
-  const withImage = news.slice(1, 3)
-  const noImage = news.slice(3, 6)
+import '../../assets/css/newscard.css'
 
+const HomeComponent = ({news}) => {
+  if (news < 6) {
+    return <div>No news for this category</div>
+  }
   return (
     <Row>
       <Row>
         <Col md={6} sm={12} xs={12}>
-          {CardFeatured(featured)}
+          {CardFeatured(news)}
         </Col>
-        {CardImage(withImage)}
+        {CardImage(news)}
       </Row>
       <Row className="news-no-image">
-        {Card(noImage)}
+        {CardNoImage(news)}
       </Row>
     </Row>
   )
 }
 
-const HomeComponent = compose(
+const Home = compose(
   connect(state => ({
     news: state.News.data
   })),
@@ -46,8 +45,8 @@ const HomeComponent = compose(
     }
   }),
   branch(props => !props.news, renderNothing)
-)(Home)
+)(HomeComponent)
 
 export default {
-  component: HomeComponent
+  component: Home
 }
