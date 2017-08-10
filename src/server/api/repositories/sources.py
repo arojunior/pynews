@@ -9,10 +9,14 @@ def get_sources(category):
 
 def save_sources(source_list):
     for source in source_list[u'sources']:
-        name = source[r'name']
-        category = source[u'category']
-        slug = source[u'id']
-        s = Source(name=name, category=category, slug=slug)
+
+        data = {
+            'name' : source[r'name'],
+            'category' : source[u'category'],
+            'slug' : source[u'id']
+        }
+
+        s = Source(**data)
         s.save()
 
 def populate_sources():
