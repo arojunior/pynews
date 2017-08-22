@@ -2,6 +2,7 @@
 /ENV
 *.pyc
 __pycache__
+db.sqlite3
 
 ### Node ###
 
@@ -31,7 +32,7 @@ node_modules
 
 #Build generated
 dist/
-
+build
 
 ### SublimeText ###
 # cache files for sublime text
