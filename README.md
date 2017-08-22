@@ -20,29 +20,6 @@
 - React
 - Redux
 
-## Requirements
-- All development should be done in a secondary (non-master) branch
-- The layout should precisely match the provided mockups
-- The website should be front-end rendered, using ReactJS
-- The news content should be provided by a REST API, developed in Python using Django + Django REST Framework (the content can be manually input in the database)
-- Both front- and back-end should be deployed to an online environment and the URL should be sent to bernardo@ckl.io
-- A pull request to the master branch containing all the code should be created when the challenge is concluded.
-
-**Extras**
-- CSS animations
-- Loading transitions
-- Usage of containers
-- Dynamically loaded news: a background scraping task should periodically retrieve news from an online feed, such as TechCrunch
-- Integration with CI tools
-
-## Evaluation Criteria
-- Meaningful git commits and Pull Requests
-- System architecture
-- Responsive/fluid layout knowledge
-- CSS architecture principles
-- Organization (folder structure, class naming, etc)
-- Component modularity/reusability
-
 # Installation
 
 **Docker**
@@ -50,7 +27,7 @@
 docker-compose up -d
 ```
 
-**Manual installation**
+**Manual installation** (requires python and nodejs installed locally)
 - Create a virtual environment
 - Go to src/server
 ```sh
@@ -61,7 +38,9 @@ python manage.py getsources
 python manage.py getarticles
 python manage.py runserver
 ```
-- In another terminal, go to src/client
+- In another terminal, navigate to src/client
 ```sh
 npm start
 ```
+- Then open http://localhost:3000 (client)
+
